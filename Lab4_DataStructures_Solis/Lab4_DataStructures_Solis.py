@@ -49,7 +49,11 @@ x_val, y_val, z_val = fixed_coordinates
 print(f"Unpacked Values -> X: {x_val}, Y: {y_val}, Z: {z_val}")
 
 print("\nAttempting modification...")
-fixed_coordinates[0] = 99
+try:
+    fixed_coordinates[0] = 99
+except TypeError as error_msg:
+    print(f"Modification Error: {error_msg}")
+
 print(f"Modified Coordinates: {fixed_coordinates}")
 
 data_payload = {
